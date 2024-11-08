@@ -181,9 +181,11 @@ li {
 .profissional img {
     width: 100%;
     height: auto;
-    border-radius: 50%;
+    border-radius: 15px;  /* Faz a imagem ficar circular */
     max-width: 150px;
     margin-bottom: 15px;
+    object-fit: cover;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);  /* Sombra ao redor da imagem */
 }
 
 .profissional h3 {
@@ -258,5 +260,15 @@ section.visible, header.visible {
         background-color: #ae886d;
         padding: 20px;
         gap: 20px;
+    }
+
+    .profissionais-lista {
+        flex-direction: column; /* Coloca as divs em coluna */
+        align-items: center; /* Centraliza as divs na tela */
+    }
+
+    .profissional {
+        max-width: 90%; /* Ajusta o tamanho da div para ocupar mais espaço */
+        margin-bottom: 20px; /* Adiciona espaçamento entre as divs */
     }
 }
