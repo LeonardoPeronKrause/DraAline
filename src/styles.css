@@ -136,32 +136,41 @@ li {
 
 #profissionais {
     text-align: center;
-    padding: 40px;
+    padding: 40px 5%;
     background-color: #f6e5dd;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 #profissionais h2 {
     font-size: 2em;
     margin-bottom: 20px;
-    color: #333
+    color: #333;
+    width: 100%;
+    text-align: center;
 }
 
 .profissionais-lista {
     display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
     justify-content: center;
+    gap: 40px;
+    width: 100%;
+    max-width: 1200px;
 }
 
 .profissional {
     background-color: white;
-    padding: 15px;
+    padding: 20px;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     width: 100%;
-    max-width: 300px;
+    max-width: 500px;
     text-align: center;
     transition: transform 0.2s ease;
+    margin: 0;
 }
 
 .profissional:hover {
@@ -174,7 +183,7 @@ li {
     height: auto;
     border-radius: 50%;
     max-width: 150px;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
 }
 
 .profissional h3 {
