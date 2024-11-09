@@ -1,11 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 /* Configurações gerais */
 html, body {
     height: 100%;
-    margin: 0;
-    padding: 0;
-    width: 100%;
+    width: 100vw;
+    overflow-x: hidden;
     font-family: 'Poppins', sans-serif;
     background-color: #f6e5dd;
 }
@@ -14,8 +19,7 @@ html, body {
     position: fixed;
     top: 0;
     left: 0;
-    width: 100%;
-    box-sizing: border-box;
+    width: 100vw;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -28,6 +32,22 @@ html, body {
 .menu-items {
     display: flex;
     gap: 40px;
+    flex-wrap: wrap;
+}
+
+.menu-items.active {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: fixed;
+    top: 60px;
+    left: 0;
+    right: 0;
+    max-height: 80vh;
+    overflow-y: auto;
+    background-color: #ae886d;
+    gap: 20px;
+    z-index: 1000;
 }
 
 .menu-items a {
@@ -44,8 +64,10 @@ html, body {
 
 /* Estilo do ícone de menu hambúrguer */
 .menu-toggle {
+    display: none;
     font-size: 1.8em;
     cursor: pointer;
+    color: white;
 }
 
 
@@ -103,17 +125,19 @@ li {
 }
 
 #procedimentos ul li {
-    padding: 15px;
     background-color: white;
+    padding: 15px;
     border-radius: 5px;
     font-size: 1.1em;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    text-align: center;
 }
 
 #procedimentos ul li:last-child {
     grid-column: span 2; /* Ocupa ambas as colunas para centralizar */
     justify-self: center; /* Centraliza o conteúdo */
+    margin-bottom: 20px;
 }
 
 #contato ul li {
@@ -148,7 +172,7 @@ li {
 #profissionais h2 {
     font-size: 2em;
     margin-bottom: 20px;
-    color: #333;
+    color: #ae886d;
     width: 100%;
     text-align: center;
 }
@@ -166,11 +190,9 @@ li {
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    width: 100%;
-    max-width: 500px;
+    max-width: 350px; /* Limita a largura máxima dos cards de profissionais */
     text-align: center;
     transition: transform 0.2s ease;
-    margin: 0;
 }
 
 .profissional:hover {
@@ -185,18 +207,18 @@ li {
     max-width: 150px;
     margin-bottom: 15px;
     object-fit: cover;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);  /* Sombra ao redor da imagem */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);  /* Sombra ao redor da imagem */
 }
 
 .profissional h3 {
     font-size: 1.2em;
     margin: 10px 0;
-    color: black;
+    color: #ae886d;
 }
 
 .profissional p {
     font-size: 0.95;
-    color: #666;
+    color: #6d5d59;
     margin-top: 10px;
 }
 
@@ -216,7 +238,7 @@ footer {
     background-color: #ae886d;
     color: white;
     padding: 10px;
-    width: 100%;
+    width: 100vw;
     text-align: center;
 }
 
@@ -237,29 +259,29 @@ section.visible, header.visible {
 
 /* Menu oculto em telas menores */
 @media (max-width: 768px) {
-    .menu-items {
-        display: none; /* Menu escondido em telas menores */
-        position: absolute;
-        top: 60px;
+    body {
+        margin: 0;
+    }
+    header {
+        width: 100vw;
+    }
+    menu {
+        width: 100vw;
+        padding: 0;
+        border: none;
+        box-shadow: none;
         left: 0;
-        right: 0;
-        background-color: #ae886d;
-        flex-direction: column;
-        text-align: center;
-        padding: 20px;
+    }
+    .menu-items {
+        display: none;
     }
 
     .menu-items.active {
-        display: flex; /* Exibir o menu ao clicar */
-        flex-direction: column;
-        align-items: center;
-        position: absolute;
-        top: 50px;
-        left: 0;
-        right: 0;
-        background-color: #ae886d;
-        padding: 20px;
-        gap: 20px;
+        display: flex;
+    }
+
+    .menu-toggle {
+        display: block;
     }
 
     .profissionais-lista {
@@ -268,7 +290,46 @@ section.visible, header.visible {
     }
 
     .profissional {
-        max-width: 90%; /* Ajusta o tamanho da div para ocupar mais espaço */
-        margin-bottom: 20px; /* Adiciona espaçamento entre as divs */
+        max-width: 100%; /* Ajusta o tamanho da div para ocupar mais espaço */
+        margin: 20px;
+    }
+
+    #procedimentos {
+        max-width: 100%;
+        padding: 0 15px; /* Margem interna nas laterais para afastar do limite da tela */
+        box-sizing: border-box;
+        margin: 0 auto;
+    }
+
+    #procedimentos ul {
+        grid-template-columns: 1fr; /* Uma coluna em telas menores */
+        padding: 0 10px;
+        gap: 15px;
+        max-width: 100%;
+    }
+
+    #procedimentos ul li {
+        background-color: white;
+        padding: 15px;
+        border-radius: 5px;
+        font-size: 1.1em;
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    }
+
+    #contato ul li {
+        background-color: white;
+        padding: 15px;
+        margin-left: 15px;
+        margin-right: 15px;
+        border-radius: 5px;
+        font-size: 1.1em;
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);  
+    }
+
+    footer {
+        width: 100vw;
+        left: 0;
     }
 }
