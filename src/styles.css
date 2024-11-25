@@ -92,7 +92,7 @@ header {
 h1 {
     font-size: 3em;
     font-weight: 700;
-    color: black; /* Cor quente e acolhedora para o título */
+    color: burlywood;
     margin-bottom: 20px;
 }
 
@@ -153,10 +153,6 @@ p {
     background-color: #8c6b51; /* Efeito de hover para deixar o botão mais interativo */
 }
 
-li {
-    color: #ae886d;
-}
-
 #procedimentos {
     margin-top: 70px;
 }
@@ -197,6 +193,10 @@ li {
     color: #6d5d59;
 }
 
+#contato p {
+    color: gray;
+}
+
 .contato {
     display: flex;
     justify-content: center;
@@ -232,8 +232,6 @@ li {
 
 .contato-profissional p {
     font-size: 1.2em;
-    font-weight: bold;
-    color: #6d5d59;
     margin: 10px 0;
 }
 
