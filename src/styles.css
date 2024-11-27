@@ -92,7 +92,7 @@ header {
 h1 {
     font-size: 3em;
     font-weight: 700;
-    color: burlywood;
+    color: #deb887;
     margin-bottom: 20px;
 }
 
@@ -127,7 +127,7 @@ p {
 .slide {
     position: absolute;
     width: 100%;
-    height: 100%;
+    height: 100vh;
     background-size: cover;
     background-position: center;
     opacity: 0;
@@ -153,33 +153,33 @@ p {
     background-color: #8c6b51; /* Efeito de hover para deixar o botão mais interativo */
 }
 
-#procedimentos {
-    margin-top: 70px;
+.procedimentos {
+    background-color: #f6e5dd;
+    margin-top: 50px;
+    box-sizing: border-box;
 }
 
-#procedimentos ul {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr); /* Duas colunas */
-    gap: 15px; /* Espaçamento reduzido */
-    max-width: 900px; /* Ajuste da largura máxima para centralizar melhor */
-    margin: 0 auto; /* Centraliza a lista na página */
-    padding: 0;
-    list-style-type: none;
+.procedimentos ul {
+    display: flex; /* Alinha os itens em linha */
+    flex-wrap: wrap; /* Permite que os itens "quebrem" linha em telas menores */
+    gap: 10px; /* Espaçamento entre os itens */
+    justify-content: space-between; /* Espaçamento uniforme entre os itens */
+    padding: 0 150px;
+    margin: 0;
+    list-style: none;
+    box-sizing: border-box;
+    margin-bottom: 30px;
 }
 
-#procedimentos ul li {
+.procedimentos ul li {
     background-color: white;
     padding: 20px;
     border-radius: 8px;
     font-size: 1.1em;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
     text-align: center;
-}
-
-#procedimentos ul li:last-child {
-    grid-column: span 2; /* Ocupa ambas as colunas para centralizar */
-    justify-self: center; /* Centraliza o conteúdo */
-    margin-bottom: 20px;
+    width: calc(50% - 10px); /* Cada item ocupa metade da largura */
+    box-sizing: border-box;
 }
 
 #contato {
@@ -221,7 +221,6 @@ p {
     justify-content: center; /* Centraliza os itens verticalmente */
     margin-top: 50px;
     margin-bottom: 50px;
-    
 }
 
 .contato-profissional .logo {
@@ -296,8 +295,6 @@ p {
     margin-bottom: 15px;
 }
 
-
-
 #profissionais {
     text-align: center;
     padding: 40px 5%;
@@ -307,6 +304,7 @@ p {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin-bottom: 50px;
 }
 
 #profissionais h2 {
@@ -408,7 +406,7 @@ section.visible, header.visible {
 }
 
 /* Menu oculto em telas menores */
-@media (max-width: 860px) {
+@media (max-width: 430px) {
     body {
         margin: 0;
     }
@@ -471,7 +469,7 @@ section.visible, header.visible {
         margin: 20px;
     }
 
-    #procedimentos {
+    .procedimentos {
         max-width: 100%;
         padding: 0 15px; /* Margem interna nas laterais para afastar do limite da tela */
         box-sizing: border-box;
@@ -479,7 +477,7 @@ section.visible, header.visible {
         margin-top: 50px;
     }
 
-    #procedimentos ul {
+    .procedimentos ul {
         grid-template-columns: 1fr; /* Uma coluna em telas menores */
         padding: 0 10px;
         gap: 15px;
@@ -487,11 +485,13 @@ section.visible, header.visible {
         list-style: none;
     }
 
-    #procedimentos ul li {
-        flex: 1 1 calc(50% - 20px);
+    .procedimentos ul li {
+        font-size: 0.9em; /* Reduz o tamanho da fonte */
+        padding: 15px; /* Reduz o espaçamento interno */
+        text-align: center; /* Justifica o texto */
     }
 
-    #contato {
+    .contato {
         font-size: 1 1 100%;
         max-width: 100%;
         height: auto;
