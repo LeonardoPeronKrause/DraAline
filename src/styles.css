@@ -9,7 +9,7 @@
 /* Configurações gerais */
 html, body {
     height: 100%;
-    width: 100vw;
+    width: 100%;
     overflow-x: hidden;
     font-family: 'Poppins', sans-serif;
     background-color: #f6e5dd;
@@ -19,7 +19,7 @@ html, body {
     position: fixed;
     top: 0;
     left: 0;
-    width: 100vw;
+    width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -92,7 +92,7 @@ header {
 h1 {
     font-size: 3em;
     font-weight: 700;
-    color: #ae886d; /* Cor quente e acolhedora para o título */
+    color: #deb887;
     margin-bottom: 20px;
 }
 
@@ -119,7 +119,7 @@ p {
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
+    height: 200%;
     overflow: hidden;
     z-index: -1;
 }
@@ -127,7 +127,7 @@ p {
 .slide {
     position: absolute;
     width: 100%;
-    height: 100%;
+    height: 100vh;
     background-size: cover;
     background-position: center;
     opacity: 0;
@@ -153,155 +153,41 @@ p {
     background-color: #8c6b51; /* Efeito de hover para deixar o botão mais interativo */
 }
 
-li {
-    color: #ae886d;
-}
-
-#contato {
-    padding: 40px 20px;
-    text-align: center;
-}
-
-#contato h2 {
-    font-size: 2em;
-    margin-bottom: 20px;
-    color: #6d5d59;
-}
-
-.contato {
-    display: flex;
-    justify-content: center;
-    gap: 40px;
-    flex-wrap: wrap;
-}
-
-.contato-profissional {
-    flex: 1 1 45%;
-    min-width: 300px;
-    max-width: 500px;
-    height: 300px;
-    padding: 30px;
-    background-color: #ffffff;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center; /* Centraliza os itens horizontalmente */
-    justify-content: center; /* Centraliza os itens verticalmente */
-    margin-top: 50px;
-    margin-bottom: 50px;
-    
-}
-
-.contato-profissional .logo {
-    width: 50%;
-    height: auto;
-    margin-bottom: 10px;
-}
-
-.contato-profissional p {
-    font-size: 1.2em;
-    font-weight: bold;
-    color: #6d5d59;
-    margin: 10px 0;
-}
-
-.contato-profissional:hover {
-    transform: scale(1.05);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
-}
-
-.botoes-contato {
-    display: flex;
-    gap: 30px;
-    justify-content: center;
-    align-items: center;
-    margin-top: 15px;
-}
-
-.botoes-contato a {
-    font-size: 2.5em;
-    color: white;
-    width: 70px;
-    height: 70px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
-    text-decoration: none;
-}
-
-.botoes-contato i {
-    font-size: 50px;
-}
-
-.botao-whatsapp, .botao-instagram {
-    text-decoration: none;
-    padding: 10px 20px;
-    color: #fff;
-    border-radius: 25px;
-    font-size: 1em;
-    transition: background-color 0.3s ease;
-}
-
-.botao-whatsapp {
-    background-color: #25D366;
-}
-
-.botao-instagram {
-    background-color: #E1306C;
-}
-
-.botao-whatsapp:hover {
-    background-color: #1DA851;
-}
-
-.botao-instagram:hover {
-    background-color: #9B2060;
-}
-
-.logo {
-    width: 80px;
-    height: auto;
-    border-radius: 50%;
-    margin-bottom: 15px;
-}
-
 #procedimentos {
-    margin-top: 70px;
+    margin-bottom: 5%;
 }
 
-#procedimentos ul {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr); /* Duas colunas */
-    gap: 15px; /* Espaçamento reduzido */
-    max-width: 900px; /* Ajuste da largura máxima para centralizar melhor */
-    margin: 0 auto; /* Centraliza a lista na página */
-    padding: 0;
-    list-style-type: none;
+#procedimentos h2 {
+    margin-bottom: 5%;
 }
 
-#procedimentos ul li {
+.procedimentos {
+    background-color: #f6e5dd;
+    margin-top: 50px;
+    box-sizing: border-box;
+}
+
+.procedimentos ul {
+    display: flex; /* Alinha os itens em linha */
+    flex-wrap: wrap; /* Permite que os itens "quebrem" linha em telas menores */
+    gap: 10px; /* Espaçamento entre os itens */
+    justify-content: space-between; /* Espaçamento uniforme entre os itens */
+    padding: 0 150px;
+    margin: 0;
+    list-style: none;
+    box-sizing: border-box;
+    margin-bottom: 30px;
+}
+
+.procedimentos ul li {
     background-color: white;
     padding: 20px;
     border-radius: 8px;
     font-size: 1.1em;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
     text-align: center;
-}
-
-#procedimentos ul li:last-child {
-    grid-column: span 2; /* Ocupa ambas as colunas para centralizar */
-    justify-self: center; /* Centraliza o conteúdo */
-    margin-bottom: 20px;
-}
-
-#procedimentos ul li:hover {
-    transform: scale(1.05);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    width: calc(50% - 10px); /* Cada item ocupa metade da largura */
+    box-sizing: border-box;
 }
 
 #profissionais {
@@ -313,11 +199,12 @@ li {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin-bottom: 10px;
 }
 
 #profissionais h2 {
     font-size: 2em;
-    margin-bottom: 20px;
+    margin-bottom: 5%;
     color: #ae886d;
     width: 100%;
     text-align: center;
@@ -378,15 +265,122 @@ li {
     margin-top: 10px;
 }
 
-a {
+.profissional a {
     color: #ae886d;
     text-decoration: none;
     font-weight: bold;
 }
 
-a:hover {
+.profissional a:hover {
     transform: scale(1.1);
     transition: transform 0.2s ease;
+}
+
+#contato {
+    padding: 40px 40px;
+    text-align: center;
+}
+
+#contato h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: #6d5d59;
+}
+
+#contato p {
+    color: gray;
+    margin-bottom: auto;
+}
+
+.contato {
+    display: flex;
+    justify-content: center;
+    gap: 7%;
+    flex-wrap: wrap;
+}
+
+.contato-profissional {
+    min-width: 300px;
+    max-width: 500px;
+    height: 420px;
+    padding: 30px;
+    background-color: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centraliza os itens horizontalmente */
+    justify-content: center; /* Centraliza os itens verticalmente */
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.contato-profissional .logo {
+    width: 60%;
+    height: auto;
+    margin-bottom: 0px;
+    border-radius: 50%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.contato-profissional p {
+    font-size: 1.2em;
+    margin-top: 20px;
+}
+
+.contato-profissional:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.botoes-contato {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    align-items: center;
+    margin-top: 15px;
+}
+
+.botoes-contato a {
+    font-size: 2.5em;
+    color: white;
+    width: 70px;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    text-decoration: none;
+}
+
+.botoes-contato i {
+    font-size: 50px;
+}
+
+.botao-whatsapp, .botao-instagram {
+    text-decoration: none;
+    color: #fff;
+    border-radius: 25px;
+    font-size: 1em;
+    transition: background-color 0.3s ease;
+}
+
+.botao-whatsapp {
+    background-color: #25D366;
+}
+
+.botao-instagram {
+    background-color: #E1306C;
+}
+
+.botao-whatsapp:hover {
+    background-color: #1DA851;
+}
+
+.botao-instagram:hover {
+    background-color: #9B2060;
 }
 
 /* Rodapé */
@@ -394,7 +388,7 @@ footer {
     background-color: #ae886d;
     color: white;
     padding: 10px;
-    width: 100vw;
+    width: 100%;
     text-align: center;
 }
 
@@ -413,18 +407,29 @@ section.visible, header.visible {
     transform: translateY(0);
 }
 
-/* Menu oculto em telas menores */
-@media (max-width: 768px) {
+@media (max-width: 870px) {
+    .menu-toggle {
+        display: flex;
+    }
+
+    .menu-items {
+        display: none;
+    }
+}
+
+@media (max-width: 430px) {
     body {
         margin: 0;
     }
+
     header {
         padding-top: 100px;
         padding-left: 20px;
         padding-right: 20px;
     }
-    menu {
-        width: 100vw;
+    
+    #home menu {
+        width: 100%;
         padding: 0;
         border: none;
         box-shadow: none;
@@ -432,18 +437,18 @@ section.visible, header.visible {
         align-items: center;
         justify-content: center;
     }
-    h1 {
+
+    #home h1 {
         font-size: 2em;
         padding: 0 10px;
     }
-    p {
-        font-size: 1em;
-        padding: 0 10px;
-    }
+
     .btn {
         padding: 12px 25px;
         font-size: 1em;
     }
+
+
     .menu-items {
         display: none;
         flex-direction: column;
@@ -459,11 +464,44 @@ section.visible, header.visible {
     }
 
     .menu-items.active {
+        margin-top: 22px;
         display: flex;
+        height: auto;
     }
 
     .menu-toggle {
         display: block;
+    }
+
+    .slideshow {
+        height: 100vh;
+    }
+
+    #procedimentos h2 {
+        margin-top: 20%;
+        margin-bottom: 5%;
+    }
+
+    .procedimentos {
+        max-width: 100%;
+        padding: 0 15px; /* Margem interna nas laterais para afastar do limite da tela */
+        box-sizing: border-box;
+        margin: 0 auto;
+        margin-top: 50px;
+    }
+
+    .procedimentos ul {
+        grid-template-columns: 1fr; /* Uma coluna em telas menores */
+        padding: 0 10px;
+        gap: 15px;
+        max-width: 100%;
+        list-style: none;
+    }
+
+    .procedimentos ul li {
+        font-size: 0.9em; /* Reduz o tamanho da fonte */
+        padding: 15px; /* Reduz o espaçamento interno */
+        text-align: center; /* Justifica o texto */
     }
 
     .profissionais-lista {
@@ -476,39 +514,274 @@ section.visible, header.visible {
         margin: 20px;
     }
 
-    #procedimentos {
-        max-width: 100%;
-        padding: 0 15px; /* Margem interna nas laterais para afastar do limite da tela */
-        box-sizing: border-box;
-        margin: 0 auto;
-        margin-top: 50px;
+    #contato p {
+        margin-bottom: auto;
     }
 
-    #procedimentos ul {
-        grid-template-columns: 1fr; /* Uma coluna em telas menores */
-        padding: 0 10px;
-        gap: 15px;
-        max-width: 100%;
-        list-style: none;
-    }
-
-    #procedimentos ul li {
-        background-color: white;
-        padding: 15px;
-        border-radius: 5px;
-        font-size: 1.1em;
-        transition: transform 0.2s ease, box-shadow 0.2s ease;
-        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
-        margin-bottom: 10px;
-    }
-
-    #contato {
+    .contato {
         font-size: 1 1 100%;
         max-width: 100%;
+    }
+
+    .contato p {
+        margin-top: 30px;
+    }
+
+    .contato-profissional {
         height: auto;
     }
 
+    .contato-profissional .logo {
+        width: 75%;
+        height: auto;
+        border-radius: 50%;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
     footer {
-        width: 100vw;
+        width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .menu-items {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .menu-items a {
+        font-size: 1em;
+        padding: 5px;
+    }
+
+    .procedimentos ul li {
+        width: calc(100% - 20px); /* Cada item ocupa 100% da largura */
+    }
+
+    h1 {
+        font-size: 2.5em;
+    }
+
+    p {
+        font-size: 1em;
+    }
+}
+
+@media (max-width: 414px) {
+    .menu-items {
+        display: none;
+        flex-direction: column;
+    }
+    
+    .menu-toggle {
+        display: flex;
+    }
+
+    .slideshow {
+        display: block;
+    }
+
+    .slide {
+        height: 100vh;
+    }
+
+    #home h1 {
+        font-size: 22px;
+    }
+
+    #procedimentos ul {
+        padding-left: 20px;
+    }
+
+    .profissional {
+        max-width: 100%;
+    }
+
+    .profissionais-lista {
+        align-items: center;
+    }
+
+    .contato-profissional {
+        width: 100%;
+        margin-bottom: 15px;
+    }
+
+    .botoes-contato a {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 375px) {
+    .menu-items {
+        display: none;
+        flex-direction: column;
+    }
+
+    .menu-toggle {
+        display: flex;
+    }
+
+    .slideshow {
+        display: block;
+    }
+
+    .slide {
+        height: 100vh; /* Ajusta para 60% da altura da tela */
+    }
+
+    #home h1 {
+        font-size: 20px; /* Reduz o tamanho da fonte do título */
+    }
+
+    #home p {
+        font-size: 14px; /* Ajusta o tamanho do parágrafo */
+    }
+
+    #procedimentos ul {
+        padding-left: 20px;
+    }
+
+    .profissional {
+        max-width: 100%;
+    }
+    
+
+    .contato-profissional {
+        width: 100%;
+        margin-bottom: 15px;
+    }
+
+    .botoes-contato a {
+        font-size: 18px; /* Ajuste no tamanho dos botões */
+    }
+
+    /* Ajustando a largura das imagens e textos */
+    .profissional img {
+        width: 80%; /* Ajusta o tamanho das imagens dos profissionais */
+        margin-bottom: 10px;
+    }
+}
+
+@media (max-width: 390px) {
+    .menu-items {
+        display: none;
+        flex-direction: column;
+    }
+
+    .menu-toggle {
+        display: flex;
+    }
+
+    .slideshow {
+        display: block;
+    }
+
+    .slide {
+        height: 100vh; /* Ajuste para uma altura maior, ainda em proporção */
+    }
+
+    #home h1 {
+        font-size: 22px; /* Ajuste o tamanho do título */
+    }
+
+    #home p {
+        font-size: 15px; /* Ajuste o tamanho do texto */
+    }
+
+    #procedimentos ul {
+        padding-left: 25px; /* Melhor espaçamento para a lista */
+    }
+
+    .profissional {
+        max-width: 100%;
+    }
+
+    .contato-profissional {
+        width: 100%;
+        margin-bottom: 20px; /* Espaçamento maior entre as colunas de profissionais */
+    }
+
+    .botoes-contato a {
+        font-size: 20px; /* Ajuste no tamanho dos botões */
+    }
+
+    .profissionais-lista {
+        padding-left: 20px;  /* Aumenta o espaçamento à esquerda */
+        padding-right: 20px; /* Aumenta o espaçamento à direita */
+    }
+
+    .profissional img {
+        width: 85%; /* Ajusta o tamanho das imagens dos profissionais */
+        margin-bottom: 15px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .logo-menu {
+        font-size: 30px;
+    }
+
+    .menu-items {
+        display: flex;
+    }
+
+    .menu-items a {
+        font-size: 25px
+    }
+
+    .menu-toggle {
+        display: none;
+    }
+
+    .slideshow {
+        display: block;
+    }
+
+    .slide {
+        height: 100vh;
+    }
+
+    #home h1 {
+        font-size: 50px;
+    }
+
+    #home p {
+        font-size: 30px;
+    }
+
+    .btn {
+        font-size: 25px;
+    }
+
+    #procedimentos {
+        margin-top: 100px;
+    }
+
+    .profissional {
+        max-width: 100%;
+    }
+
+    .contato-profissional {
+        width: 48%;
+        margin-bottom: 20px;
+    }
+
+    .botoes-contato a {
+        font-size: 26px;
+    }
+
+    .contato {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .contato-profissional {
+        width: 40%; /* Largura de cada item dentro de contato */
+        margin-bottom: 20px;
+    }
+
+    .contato-profissional img {
+        width: 100%;
+        margin-bottom: 20px;
     }
 }
