@@ -4,6 +4,8 @@ function toggleMenu() {
     navMenu.classList.toggle("active");
 }
 
+document.querySelector('.menu-toggle').addEventListener('click', toggleMenu);
+
 // Função para scroll suave entre seções
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener("click", function(e) {
@@ -18,6 +20,17 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         const navMenu = document.getElementById("nav-menu");
         navMenu.classList.remove("active");
     });
+});
+
+document.querySelector('.btn').addEventListener('click', function (e) {
+    e.preventDefault(); // Previne o comportamento padrão do link
+
+    // Esconde o #home
+    const homeSection = document.getElementById('home');
+    homeSection.classList.add('hidden');
+
+    // Rola suavemente para a próxima seção
+    document.getElementById('procedimentos').scrollIntoView({ behavior: 'smooth' });
 });
 
 // Efeito de fade-in ao carregar cada seção
@@ -45,9 +58,8 @@ document.querySelectorAll("#procedimentos ul li").forEach(item => {
 });
 
 // Funcionalidade de Slideshow
-let currentSlide = 0;
-const slides = document.querySelectorAll('.slideshow .slide');
-const totalSlides = slides.length;
+const slides = document.querySelectorAll('.slide');
+let currentIndex = 0;
 
 function showSlide(index) {
     slides.forEach((slide, i) => {
@@ -59,9 +71,13 @@ function showSlide(index) {
 }
 
 function nextSlide() {
-    currentSlide = (currentSlide + 1) % totalSlides;
-    showSlide(currentSlide);
+    currentIndex = (currentIndex + 1) % slides.length;
+    showSlide(currentIndex);
 }
 
-setInterval(nextSlide, 5000); // Troca de imagem a cada 5 segundos
-showSlide(currentSlide); // Mostra o primeiro slide
+// Mostra a primeira imagem ao carregar
+showSlide(currentIndex);
+
+// Altera a imagem a cada 3 segundos
+setInterval(nextSlide, 3000);
+
