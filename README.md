@@ -1,5 +1,3 @@
-#Projeto congelado
-
 # A&M DermaEssência
 
 **A&M DermaEssência** é um site voltado para o setor de estética e bem-estar, desenvolvido para a clínica de tratamentos estéticos A&M DermaEssência. O site exibe informações sobre os procedimentos oferecidos pela clínica, bem como detalhes sobre os profissionais e formas de contato.
